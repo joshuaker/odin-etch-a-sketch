@@ -1,5 +1,5 @@
+const grid = document.querySelector("#grid-container");
 function getSquares(squareNum, sides) {
-    const grid = document.querySelector("#grid-container");
     // grid width/height of 960px divided by # of sides
     const gridStyle = getComputedStyle(grid);
     const gridLength = gridStyle.width;
@@ -18,9 +18,18 @@ function getSquares(squareNum, sides) {
     }
 }
 getSquares(16*16, 16);
+function rndRGBColorCode() {
+    return `'rgb(' . rand(0, 255) . ',' . rand(0, 255) . ',' . rand(0, 255) . ')'`;
+}
+console.log(rndRGBColorCode())
 
 const getNewSquare = document.querySelector("#getNewSquare");
 getNewSquare.addEventListener("click", () =>{
-    sides = parseInt(prompt("Sides: "))
-    console.log(sides)
+    sides = parseInt(prompt("Sides: "));
+    // set upper limit of sides
+    if (sides > 100) {
+        sides = 100;
+    };
+    grid.innerHTML = "";
+    getSquares(sides*sides,sides)
 })
