@@ -1,12 +1,10 @@
-let sides = 16;
-let squareNum = sides * sides;
-const grid = document.querySelector("#grid-container");
-// grid width/height of 960px divided by # of sides
-const gridStyle = getComputedStyle(grid);
-const gridLength = gridStyle.width;
-const squareLength = `${parseInt(gridLength)/sides}px`
+function getSquares(squareNum, sides) {
+    const grid = document.querySelector("#grid-container");
+    // grid width/height of 960px divided by # of sides
+    const gridStyle = getComputedStyle(grid);
+    const gridLength = gridStyle.width;
+    const squareLength = `${parseInt(gridLength)/sides}px`;
 
-function getSquares(squareNum) {
     while (squareNum > 0) {
         squareNum--;
         let div = document.createElement("div");
@@ -19,7 +17,7 @@ function getSquares(squareNum) {
         grid.append("", div);
     }
 }
-getSquares(squareNum);
+getSquares(16*16, 16);
 
 const getNewSquare = document.querySelector("#getNewSquare");
 getNewSquare.addEventListener("click", () =>{
