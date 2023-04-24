@@ -12,16 +12,16 @@ function getSquares(squareNum, sides) {
         div.style.width = squareLength;
         div.style.height = squareLength;
         div.addEventListener("mouseover", () => {
-            div.style.backgroundColor = "black";
+            div.style.backgroundColor = random_rgba();
         });
         grid.append("", div);
     }
 }
 getSquares(16*16, 16);
-function rndRGBColorCode() {
-    return `'rgb(' . rand(0, 255) . ',' . rand(0, 255) . ',' . rand(0, 255) . ')'`;
+function random_rgba() {
+    var o = Math.round, r = Math.random, s = 255;
+    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
 }
-console.log(rndRGBColorCode())
 
 const getNewSquare = document.querySelector("#getNewSquare");
 getNewSquare.addEventListener("click", () =>{
