@@ -12,5 +12,8 @@ while (squareNum > 0) {
     div.classList.add("square");
     div.style.width = squareLength;
     div.style.height = squareLength;
-    grid.append("", div)
+    div.addEventListener("mouseover", () => {
+        div.style.backgroundColor = "black";
+    });
+    grid.append("", div);
 }
