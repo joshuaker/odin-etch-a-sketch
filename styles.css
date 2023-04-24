@@ -3,10 +3,12 @@
     height: 960px;
     border: 1px solid black;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .square {
     border: 1px solid black;
-    width: 10px;
-    height: 10px;
+    box-sizing: border-box;
+    width: 60px;
+    height: 60px;
 }
